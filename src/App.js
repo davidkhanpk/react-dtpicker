@@ -61,8 +61,8 @@ function App() {
 
     for (let i = 1; i <= lastDay; i++) {
       if (
-        i === new Date().getDate() &&
-        sDate.getMonth() === new Date().getMonth()
+        (i === new Date().getDate() &&
+        sDate.getMonth() === new Date().getMonth() && i === selectedDate.getDate()) || (i === selectedDate.getDate())
       ) {
         days.push(<div key={i + 31} onClick={() => onSelectDate(i)} className="today">{i}</div>);
       } else {
